@@ -1,0 +1,150 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"Text": {
+					"type": "text",
+					"top": 18,
+					"left": 15,
+					"width": 499,
+					"height": 16,
+					"class": "",
+					"text": "An error coccured"
+				},
+				"Variable": {
+					"type": "input",
+					"top": 41,
+					"left": 15,
+					"width": 570,
+					"height": 146,
+					"dataSource": "Form:C1466.errormessage1",
+					"class": "",
+					"enterable": false,
+					"contextMenu": "none",
+					"scrollbarVertical": "visible",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Text1": {
+					"type": "text",
+					"top": 230,
+					"left": 15,
+					"width": 499,
+					"height": 16,
+					"class": "",
+					"text": "Please describe what you did"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 253,
+					"left": 15,
+					"width": 570,
+					"height": 146,
+					"dataSource": "Form:C1466.errormessage2",
+					"class": "",
+					"contextMenu": "none",
+					"scrollbarVertical": "visible",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Schaltfläche1": {
+					"type": "button",
+					"top": 416,
+					"left": 357,
+					"width": 111,
+					"height": 29,
+					"action": "cancel",
+					"text": "Continue",
+					"class": "",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"vbutton2": {
+					"type": "button",
+					"top": 416,
+					"left": 488,
+					"width": 111,
+					"height": 29,
+					"action": "accept",
+					"text": "Abort",
+					"class": "",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					],
+					"style": "regular"
+				}
+			}
+		}
+	],
+	"geometryStamp": 20,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}
