@@ -1,5 +1,7 @@
 //%attributes = {}
 /* Generic Error handler
+with 4D v19 R8 or newer: install using ON ERR CALL - global in On startup and On Server Startup
+with older versions:
 install using ON ERR CALL in On Startup, ON WEB AUTHENTICATON, ON SQL AUTHENTICATION, ON REST AUTHENTICATION
 and every process or worker you start, as first line of that process/worker_init
 

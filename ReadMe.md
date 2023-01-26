@@ -43,20 +43,22 @@ Usually it is better to focus on the Error stack, such as:
 Displaying just the last error is often not helpful, while the stack helps to understand the reason for an issue. If not for the end user in front of the screen, but at least for an admin or more technical skilled person.
 
 ### How to install error handler
-The error handler is installed using the command ON ERR CALL("nameOfMethod")
+The error handler is installed using the command 
+`ON ERR CALL(Formula(ErrorHandler).source; ek global)`
+or
+`ON ERR CALL("ErrorHandler"; ek global)`
 The command only impacts the current running process, as such it must be called several times.
 
 Call it directly, at the very beginning, of On Startup and On Server Startup.
 
-Call it at the beginning on Database Methods such as:
-- ON REST AUTHENTICATION
-- On WEB AUTHENTICATION
-- ON SQL AUTHENTICATION
 
-Each of those might start a new process, so we need to make sure the error handler is installed.
+### Example
 
-Similar for every new started process or worker.
+the example shows a such an error handler, collecting information about the 4D error status, about the system, etc and presenting that as dialog on screen (except if running on 4D Server). It also logs the message in table "ErrorLog" for history and late checking.
+Optionally it allows to send it as email (then you need to setup your email account credentials).
 
-Most applications have only a small amount of methods which are started as new process. Add it there. Applications with a huge amount of such methods usually have a generic starting procedure or code executed directly at start, such as registering the new process, then you can add it there.
+Use it as a template and adapt it to the need of your customer - some will like a screenshot, other will hate that idea.
+Collecting infos such as free space on all hard disks might slow down for network disks, some customers might see that as private information.
 
-Workers needs more concern, as they are started once and then live forever (except you explicitly kill them). I personally check if a worker is first time executed (by checking for the content of a global variabel, which is unique per worker as every new worker runs in another process) and if that variable is empty I init the worker (with whatever the worker needs) AND install the error handler.
+
+That's why there is no general answer what to collect. As developer we want as much as possible, but customers/unions sometimes see that different, you need to discuss that with your customer upfront.
